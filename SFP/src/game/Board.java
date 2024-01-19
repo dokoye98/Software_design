@@ -19,7 +19,6 @@ public class Board implements BoardInterFace {
 
     @Override
     public List<String> firstRow() {
-        initialiseBoard();
         List<String> firstRow = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             firstRow.add(this.spots.get(i));
@@ -53,7 +52,7 @@ public class Board implements BoardInterFace {
             formattedRow.append(this.spots.get(i));
             if ((i + 1) % 3 != 0 && i != 8) {
                 formattedRow.append(" | ");
-            } else if (i != 8) {
+            } else if (i != 8 && (i + 1) % 3 !=0 ) {
                 formattedRow.append(" ");
             }
 
@@ -62,6 +61,6 @@ public class Board implements BoardInterFace {
             }
         }
 
-        System.out.print(formattedRow.toString());
+        System.out.print(formattedRow);
     }
 }
